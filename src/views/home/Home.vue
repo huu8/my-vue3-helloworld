@@ -10,13 +10,12 @@
     
 <script setup lang='ts'>
 import axios from 'axios';
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 let tableData = ref([])
 const getTableData = async () => {
     const res = await axios.get('/api/tableData')
-    console.log(res);
+    console.log('mockRes', res);
     tableData.value = res.data.data.tableData
-    console.log(tableData);
 }
 
 onMounted(() => {
